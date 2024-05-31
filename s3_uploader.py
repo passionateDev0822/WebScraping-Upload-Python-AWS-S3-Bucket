@@ -14,7 +14,8 @@ def get_s3_client_region(s3_client):
 def upload_to_s3(file_path, bucket_name, s3_key):
     print("Now, uploading is in progress.")
     try:
-        s3_client.upload_file(file_path, bucket_name, s3_key)
+        upload_status = s3_client.upload_file(file_path, bucket_name, s3_key)
+        print("uplaod_status", upload_status)
         region = get_s3_client_region(s3_client)
         s3_url = f"https://{bucket_name}.s3.amazonaws.com/{s3_key}"
         #console_url = f"https://{region}.console.aws.amazon.com/s3/object/{bucket_name}?region={region}&prefix={s3_key}"

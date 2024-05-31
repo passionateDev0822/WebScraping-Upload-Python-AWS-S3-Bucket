@@ -14,7 +14,7 @@ def extract_item_numbers():
         return pd.Series()
 
 def update_excel_with_urls(item_number, urls):
-    print("Inserting urls of images and video")
+    print("Inserting urls of images and video in Excel")
     df = pd.read_excel(EXCEL_FILE_PATH, sheet_name='Sheet1')
     row_index = df.index[df['Style'] == item_number][0]
     
